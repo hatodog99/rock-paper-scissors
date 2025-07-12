@@ -6,9 +6,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const userInput = prompt("Your move (Rock, Paper, Scissors): ")
-    .trim()
-    .toLowerCase();
+  const userInput = prompt("Your move (Rock, Paper, Scissors): ").trim().toLowerCase();
   return userInput.charAt(0).toUpperCase() + userInput.slice(1);
 }
 
@@ -21,14 +19,10 @@ function playRound(humanChoice, computerChoice) {
   switch (humanChoice) {
     case "Rock":
       if (computerChoice == "Paper") {
-        console.log(
-          "You lose. " + computerChoice + " beats " + humanChoice + "."
-        );
+        console.log("You lose. " + computerChoice + " beats " + humanChoice + ".");
         computerScore++;
       } else if (computerChoice == "Scissors") {
-        console.log(
-          "You win! " + humanChoice + " beats " + computerChoice + "!"
-        );
+        console.log("You win! " + humanChoice + " beats " + computerChoice + "!");
         humanScore++;
       } else {
         console.log("It's a draw!");
@@ -37,14 +31,10 @@ function playRound(humanChoice, computerChoice) {
 
     case "Paper":
       if (computerChoice == "Scissors") {
-        console.log(
-          "You lose. " + computerChoice + " beats " + humanChoice + "."
-        );
+        console.log("You lose. " + computerChoice + " beats " + humanChoice + ".");
         computerScore++;
       } else if (computerChoice == "Rock") {
-        console.log(
-          "You win! " + humanChoice + " beats " + computerChoice + "!"
-        );
+        console.log("You win! " + humanChoice + " beats " + computerChoice + "!");
         humanScore++;
       } else {
         console.log("It's a draw!");
@@ -53,14 +43,10 @@ function playRound(humanChoice, computerChoice) {
 
     case "Scissors":
       if (computerChoice == "Rock") {
-        console.log(
-          "You lose. " + computerChoice + " beats " + humanChoice + "."
-        );
+        console.log("You lose. " + computerChoice + " beats " + humanChoice + ".");
         computerScore++;
       } else if (computerChoice == "Paper") {
-        console.log(
-          "You win! " + humanChoice + " beats " + computerChoice + "!"
-        );
+        console.log("You win! " + humanChoice + " beats " + computerChoice + "!");
         humanScore++;
       } else {
         console.log("It's a draw!");
