@@ -1,6 +1,6 @@
 function main() {
   const rounds = 5;
-  let scores = { human: 0, computer: 0 };
+  const scores = { human: 0, computer: 0 };
 
   // play the game,
   playGame(rounds, scores);
@@ -27,8 +27,7 @@ function getHumanChoice() {
   return userInput.charAt(0).toUpperCase() + userInput.slice(1);
 }
 
-// a round of the game
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice, scores) {
   if (humanChoice === computerChoice) {
     console.log("It's a draw!");
   } else if (
@@ -36,22 +35,22 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice === "Paper" && computerChoice === "Rock") ||
     (humanChoice === "Scissors" && computerChoice === "Paper")
   ) {
-    console.log("You win! " + humanChoice + " beats " + computerChoice + "!");
-    humanScore++;
+    console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+    scores.human++;
   } else {
-    console.log("You lose. " + humanChoice + " beats " + computerChoice + ".");
-    computerScore++;
+    console.log(`You lose. ${computerChoice} beats ${humanChoice}.`);
+    scores.computer++;
   }
 
   // print scores
-  console.log("Your score: " + humanScore);
-  console.log("Computer's score: " + computerScore);
+  console.log(`Your score: ${scores.human}`);
+  console.log(`Computer's score: ${scores.computer}`);
   console.log(" ");
 }
 
-function playGame(amountOfRounds) {
-  for (let i = 0; i < amountOfRounds; i++) {
-    playRound(getHumanChoice(), getComputerChoice());
+function playGame(rounds, scores) {
+  for (let i = 0; i < rounds; i++) {
+    playRound(getHumanChoice(), getComputerChoice(), scores);
   }
 }
 
