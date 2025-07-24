@@ -2,9 +2,6 @@ function main() {
   const rounds = 5;
   const scores = { human: 0, computer: 0 };
 
-  // play the game,
-  playGame(rounds, scores);
-
   // then show result
   if (scores.human > scores.computer) {
     console.log("🏆 You won the game!");
@@ -46,12 +43,6 @@ function playRound(humanChoice, computerChoice, scores) {
   console.log(`Your score: ${scores.human}`);
   console.log(`Computer's score: ${scores.computer}`);
   console.log(" ");
-}
-
-function playGame(rounds, scores) {
-  for (let i = 0; i < rounds; i++) {
-    playRound(getHumanChoice(), getComputerChoice(), scores);
-  }
 }
 
 main();
