@@ -1,6 +1,10 @@
 function main() {
   const rounds = 5;
   const scores = { human: 0, computer: 0 };
+  
+  for (let i = 0; i < rounds; i++) {
+    playRound(getHumanChoice(), getComputerChoice(), scores);
+  }
 
   // then show result
   if (scores.human > scores.computer) {
